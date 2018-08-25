@@ -1,0 +1,34 @@
+spring:
+   ## MySQL
+  datasource:
+   hddocRead:
+    initialize: true #指定初始化数据源，是否用data.sql来初始化，默认: true
+    name: hddocread
+    jdbc-url: jdbc:mysql://192.168.11.212:3306/hddoc?useUnicode=true&amp;characterEncoding=UTF-8
+    username: drhd
+    password: Hd_Mysql5718
+    driver-class-name: com.mysql.jdbc.Driver
+   hdcmsread:
+    initialize: true #指定初始化数据源，是否用data.sql来初始化，默认: true
+    name: hddocread
+    jdbc-url: jdbc:mysql://192.168.11.212:3306/hdcms?useUnicode=true&amp;characterEncoding=UTF-8
+    username: drhd
+    password: Hd_Mysql5718
+    driver-class-name: com.mysql.jdbc.Driver
+
+ ## Redis配置
+redis:
+    host: 192.168.11.204
+    port: 6383
+    timeout: 10000ms
+    pool:
+          max-idle: 10
+          min-idle: 1
+          max-active: 10
+          max-wait: -1ms
+
+
+log:
+  config: classpath:logback-spring.xml
+  loggingRoot: /Users/dongliangyu/WorkSpace/logs
+  loggingLevel: debug

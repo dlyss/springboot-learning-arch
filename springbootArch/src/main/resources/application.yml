@@ -1,0 +1,33 @@
+﻿spring:
+  freemarker:
+      charset: UTF-8
+      content-type: text/html
+      suffix: .ftl
+      template-loader-path: classpath:/templates/
+      request-context-attribute: true
+      settings:
+        #这里主要处理${xxx}为空值时报错，详见http://blog.csdn.net/achilles12345/article/details/38085225
+        classic_compatible: true
+        #template_update_delay: 0
+      #cache: false  #热部署时，关闭freemarker页面缓存
+  mvc:
+      view:
+        # 页面默认前缀目录
+        prefix: /WEB-INF/jsp/
+            # 响应页面默认后缀
+        suffix: .jsp
+  http:
+      encoding.charset: UTF-8
+      encoding.enable: true
+      encoding.force: true
+  ## dev | test | idc_test |idc_product
+  profiles:
+      active:  ${pom.env}
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+
+
+oko :  properties ok !
+#spring.profiles.active=dev

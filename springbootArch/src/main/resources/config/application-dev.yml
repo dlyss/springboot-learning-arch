@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    hddocread:
+      #initialize: true #指定初始化数据源，是否用data.sql来初始化，默认: true
+      name: hddocread
+      #多数据源,以下变量名称不同
+      jdbc-url: jdbc:mysql://172.16.1.201:3306/docresource?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      username: wiki_write
+      password: wiki_write
+      driver-class-name: com.mysql.jdbc.Driver
+    hdcmsread:
+     # initialize: true
+      name: hdcmsread
+      jdbc-url: jdbc:mysql://172.16.1.201:3306/hdcms?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      username: wiki_write
+      password: wiki_write
+      driver-class-name: com.mysql.jdbc.Driver
+
+
+
+ ## Redis配置
+ #2.x版本中由于引入了不同客户端，需要指定配置哪种连接池
+ #jedis客户端
+  redis:
+    host: 172.16.1.94
+    port: 6387
+    timeout: 10000
+    jedis:
+     pool:
+          max-idle: 10
+          min-idle: 1
+          max-active: 10
+          max-wait: -1
+
+log:
+  config: classpath:logback-spring.xml
+  loggingRoot: /Users/dongliangyu/WorkSpace/logs
+  loggingLevel: error
