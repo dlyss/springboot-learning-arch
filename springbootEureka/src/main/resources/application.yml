@@ -1,0 +1,20 @@
+spring:
+       application:
+           name: eureka-1
+
+#服务注册中心端口号
+server:
+  port: 1110
+
+eureka:
+#服务注册中心实例的主机名
+  instance:
+    hostname: eureka-1
+  client:
+  #是否向服务注册中心注册自己
+    register-with-eureka: false
+    #是否检索服务
+    fetch-registry:  false
+
+
+
